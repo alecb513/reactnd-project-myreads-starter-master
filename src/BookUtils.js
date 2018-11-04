@@ -1,9 +1,9 @@
 export const sortAllBooks = (list) => {
     const newList = list.sort(function (a,b){
 
-        const titleA = a.titleA.toUpperCase();
+        const titleA = a.title.toUpperCase();
        
-        const titleB = b.titleB.toUpperCase();
+        const titleB = b.title.toUpperCase();
         
         if (titleA < titleB) {
             return -1;
