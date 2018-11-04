@@ -1,5 +1,7 @@
 import React from 'react'
-// import * as BooksAPI from './BooksAPI'
+import * as BooksAPI from './BooksAPI'
+import * as BookUtils from './BookUtils';
+
 import './App.css'
 import BookCase from './Components/BookCase';
 
@@ -14,10 +16,26 @@ class BooksApp extends React.Component {
     showSearchPage: false
   }
 
+  componentDidMount = () => {
+    if (this.state.newBook){
+      this.refeshAllBooks();
+    }
+  }
+
+  refeshAllBooks = () => {
+    BooksAPI  
+      .getAll()
+      .then((list) => {
+        this.setState({
+          books: BookUtils.sortAllBooks(list),
+          newBook: false
+        });
+      });
+  }
+
   render() {
-    return (
-      <Bookcase />
-    )
+    return (<BookCase books={this.state.books} onRefreshAllBooks={this.refeshAllBooks}/>)
+     
   }
 }
 

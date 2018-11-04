@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Changer extends Components {
+class Changer extends Component {
     state = {}
 
     render() {

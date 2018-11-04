@@ -3,11 +3,32 @@ import React, { Component } from 'react'
 import BookShelf from "./BookShelf";
 
 class BookCase extends Component {
-    state = {
+    state = {}
 
-    }
+   componentDidMount = () => {
+       this.props.onRefreshAllBooks();
+   }
 
-    render() {
+   updateShelves = () => {
+       const newCurrent = {
+           name: "Cureently Reading",
+           books: this.props.books.filter(book => book.shelf === "currentlyReading")
+       };
+
+       const newWant = {
+           name: "Want to Read",
+           books: this.props.books.filter(book => book.shelf === "wantToRead")
+       };
+       const newRead = {
+        name: "Read",
+        books: this.props.books.filter(book => book.shelf === "Read")
+       };
+   }
+
+    render() { 
+        let shelves = [];
+        if (this.props.books && this.props.books.length)
+        shelves = this.updateShelves();
         return (
             <div className="app" >
                 <div className="list-books">
@@ -16,7 +37,10 @@ class BookCase extends Component {
                     </div>
                     <div className="list-books-content">
                         <div>
-                            <BookShelf />
+                           {shelves && shelves.map((shelf) => (<BookShelf
+                           key={shelf.name}
+                           shelf={shelf} 
+                           />))}
                         </div>
                     </div>
                     <div className="open-search">
@@ -24,7 +48,6 @@ class BookCase extends Component {
                     </div>
                 </div>
             </div>
-
         )
     }
 }

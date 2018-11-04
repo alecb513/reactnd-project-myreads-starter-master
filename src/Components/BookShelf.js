@@ -3,9 +3,7 @@ import React, { Component } from 'react'
 import Book from "./Book";
 
 class BookShelf extends Component {
-    state = {
-
-    }
+    state = {}
 
     render() {
         return (
@@ -13,7 +11,14 @@ class BookShelf extends Component {
                 <h2 className="bookshelf-title">Currently Reading</h2>
                 <div className="bookshelf-books">
                     <ol className="books-grid">
-                        <Book />
+                    {this.props.shelf.books.map(book => (
+                        <li key={book.id}>
+                         <Book 
+                            book={book}
+                            onChangeShelf={this.props.onChangeShelf}/>
+                        </li>
+                    ))}
+                       
                     </ol>
                 </div>
             </div>
