@@ -18,6 +18,7 @@ class Book extends Component {
                 <div className="book">
                     <div className="book-top">
                         <button classname='book-cover-button'>
+                        onCLick={(e) => this.props.onUpdateQuickView(e, this.props.book)}
                             <div
                                 className="book-cover"
                                 style={{

@@ -3,7 +3,7 @@ export const sortAllBooks = (list) => {
 
         const titleA = a.titleA.toUpperCase();
        
-        const titleA = b.titleB.toUpperCase();
+        const titleB = b.titleB.toUpperCase();
         
         if (titleA < titleB) {
             return -1;
