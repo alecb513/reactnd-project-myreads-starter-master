@@ -17,7 +17,7 @@ class Book extends Component {
             <li>
                 <div className="book">
                     <div className="book-top">
-                        <button classname='book-cover-button'>
+                        <button className='book-cover-button'>
                         onCLick={(e) => this.props.onUpdateQuickView(e, this.props.book)}
                             <div
                                 className="book-cover"
@@ -36,8 +36,6 @@ class Book extends Component {
         )
     }
 }
-
-
 
 export default Book;
 

@@ -23,6 +23,8 @@ class BookCase extends Component {
         name: "Read",
         books: this.props.books.filter(book => book.shelf === "Read")
        };
+
+       return ([newCurrent, newWant, newRead])
    }
 
     render() { 
