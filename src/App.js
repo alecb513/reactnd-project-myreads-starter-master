@@ -17,13 +17,13 @@ class BooksApp extends React.Component {
   }
 
   componentDidMount = () => {
-    if (this.state.newBook){
+    if (this.state.newBook) {
       this.refeshAllBooks();
     }
   }
 
   refeshAllBooks = () => {
-    BooksAPI  
+    BooksAPI
       .getAll()
       .then((list) => {
         this.setState({
@@ -32,11 +32,36 @@ class BooksApp extends React.Component {
         });
       });
   }
+  
+
+  changeShelf = (book, shelf) => {
+
+    BooksAPI
+      .update(book, shelf)
+      .then(response => {
+        let newList = this
+          .state
+          .books
+          .slice(0);
+          console.log(newList);
+
+        const books = newList.filter(listBook => listBook.id === book.id);
+        if (books.length) {
+          books[0].shelf = shelf;
+        } else {
+          newList.push(book);
+          newList = BookUtils.sortAllBooks(newList);
+        }
+        this.setState({ books: newList });
+      })
+  }
 
   render() {
 
-    return (<BookCase books={this.state.books} onRefreshAllBooks={this.refeshAllBooks}/>)
-    
+    return (<BookCase books={this.state.books} 
+    onRefreshAllBooks={this.refeshAllBooks}
+    onChangeShelf ={this.changeShelf}/>)
+
   }
 }
 

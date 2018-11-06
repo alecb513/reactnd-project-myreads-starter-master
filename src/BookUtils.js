@@ -16,6 +16,6 @@ export const sortAllBooks = (list) => {
         }
         return 0;
     })
-    console.log(newList);
+   
     return newList;
 }

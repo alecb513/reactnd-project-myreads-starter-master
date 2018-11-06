@@ -21,9 +21,9 @@ class BookCase extends Component {
        };
        const newRead = {
            name: "Read",
-           books: this.props.books.filter(book => book.shelf === "Read")
+           books: this.props.books.filter(book => book.shelf === "read")
        };
-
+       
        return ([newCurrent, newWant, newRead]);
    }
 
@@ -31,7 +31,6 @@ class BookCase extends Component {
         let shelves = [];
         if (this.props.books && this.props.books.length)
         shelves = this.updateShelves();
-        console.log(shelves[2]);
         return (
             <div className="app" >
                 <div className="list-books">
@@ -42,7 +41,8 @@ class BookCase extends Component {
                         <div>
                            {shelves && shelves.map((shelf) => (<BookShelf
                            key={shelf.name}
-                           shelf={shelf} 
+                           shelf={shelf}
+                           onChangeShelf={this.props.onChangeShelf} 
                            />))}
                         </div>
                     </div>
