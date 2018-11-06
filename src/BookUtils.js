@@ -6,12 +6,16 @@ export const sortAllBooks = (list) => {
         const titleB = b.title.toUpperCase();
         
         if (titleA < titleB) {
+           
             return -1;
+            
         }
         if (titleA > titleB) {
+           
             return 1;
         }
         return 0;
     })
+    console.log(newList);
     return newList;
 }

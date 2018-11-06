@@ -9,16 +9,14 @@ class Book extends Component {
 
     render() {
 
-        const authors = this.props.book.authers && this.props.book.authors.join(' | ');
+        const authors = this.props.book.authors && this.props.book.authors.join(' | ');
 
         let url = (this.props.book.imageLinks && `url(${this.props.book.imageLinks.thumbnail})`);
 
         return (
-            <li>
                 <div className="book">
                     <div className="book-top">
                         <button className='book-cover-button'>
-                        onCLick={(e) => this.props.onUpdateQuickView(e, this.props.book)}
                             <div
                                 className="book-cover"
                                 style={{
@@ -29,10 +27,9 @@ class Book extends Component {
                         </button>
                         <Changer />
                     </div >
-                    <div className="book-title">Ender's Game</div>
-                    <div className="book-authors">Orson Scott Card</div>
+                    <div className="book-title">{this.props.book.title}</div>
+                    <div className="book-authors">{authors}</div>
                 </div>
-            </li >
         )
     }
 }
