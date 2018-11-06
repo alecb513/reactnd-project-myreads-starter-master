@@ -24,14 +24,14 @@ class BookCase extends Component {
            books: this.props.books.filter(book => book.shelf === "Read")
        };
 
-       return ([newCurrent, newWant, newRead])
+       return ([newCurrent, newWant, newRead]);
    }
 
     render() { 
         let shelves = [];
         if (this.props.books && this.props.books.length)
         shelves = this.updateShelves();
-        console.log(shelves[1]);
+        console.log(shelves[2]);
         return (
             <div className="app" >
                 <div className="list-books">
