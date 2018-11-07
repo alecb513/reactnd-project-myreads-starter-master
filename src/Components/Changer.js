@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 
 class Changer extends Component {
     state = {
@@ -7,8 +7,8 @@ class Changer extends Component {
 
     onChangeShelf = (book, shelf) => {
         this.setState({shelfSelection: shelf});
-        this.props
-        .onChangeShelf({book, shelf});
+        this.props.onChangeShelf({book, shelf});
+        
     }
 
     componentWillReceiveProps = (props) => {
@@ -16,13 +16,13 @@ class Changer extends Component {
         this.setState({shelfSelection: this.props.book.shelf});
     }
 
-    render() {
+    render = () => {
         return (
             <div className="book-shelf-changer">
                 <select
                     value={this.state.shelfSelection}
                     onChange={(e) => this.onChangeShelf(this.props.book, e.target.value)}>
-                    <option value="move" disabled>Move to...</option>
+                    <option value="" disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="wantToRead">Want to Read</option>
                     <option value="read">Read</option>

@@ -43,7 +43,7 @@ class BooksApp extends React.Component {
           .state
           .books
           .slice(0);
-          console.log(newList);
+         
 
         const books = newList.filter(listBook => listBook.id === book.id);
         if (books.length) {
@@ -51,14 +51,16 @@ class BooksApp extends React.Component {
         } else {
           newList.push(book);
           newList = BookUtils.sortAllBooks(newList);
+          console.log('App ' + newList)
         }
         this.setState({ books: newList });
       })
+   
   }
 
   render() {
 
-    return (<BookCase books={this.state.books} 
+    return (<BookCase books={this.state.books}
     onRefreshAllBooks={this.refeshAllBooks}
     onChangeShelf ={this.changeShelf}/>)
 
