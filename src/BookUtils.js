@@ -30,6 +30,6 @@ export const sortAllBooks = (list) => {
 
 export const sortAllBooks = (list) => {
 const newList = list.sort();
-console.log(newList);
+
 return newList;
 }
