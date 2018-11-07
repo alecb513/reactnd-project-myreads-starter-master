@@ -51,11 +51,9 @@ class BooksApp extends React.Component {
         } else {
           newList.push(book);
           newList = BookUtils.sortAllBooks(newList);
-          console.log('App ' + newList)
         }
         this.setState({ books: newList });
       })
-   
   }
 
   render() {

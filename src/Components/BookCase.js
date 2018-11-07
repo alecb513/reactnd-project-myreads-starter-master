@@ -32,9 +32,9 @@ class BookCase extends Component {
         if (this.props.books && this.props.books.length)
         shelves = this.updateShelves();
         return (
-            <div className="app" >
+            <div className="app">
                 <div className="list-books">
-                    <div className="list-books-tittle">
+                    <div className="list-books-title">
                         <h1>MyReads</h1>
                     </div>
                     <div className="list-books-content">
