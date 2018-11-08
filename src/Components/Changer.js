@@ -7,8 +7,7 @@ class Changer extends Component {
 
     onChangeShelf = (book, shelf) => {
         this.setState({shelfSelection: shelf});
-        //this.props.onChangeShelf({book, shelf});
-        this.props.onChangeShelf();
+        this.props.onChangeShelf(book, shelf);
         
     }
 
