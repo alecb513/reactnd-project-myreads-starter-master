@@ -46,8 +46,8 @@ class BookCase extends Component {
                            />))}
                         </div>
                     </div>
-                    <div className="open-search">
-                        <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+                    <div className="open-search">{console.log('seach opened')}
+                        <a onClick={() => this.setState({ showSearchPage: true })}>Add a book{console.log('click')}</a>
                     </div>
                 </div>
             </div>
