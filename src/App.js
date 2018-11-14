@@ -1,6 +1,8 @@
 import React from 'react'
 import { Route } from 'react-router-dom';
 
+import { BrowserRouter } from 'react-router-dom'
+
 import * as BooksAPI from './BooksAPI'
 import * as BookUtils from './BookUtils';
 
@@ -62,6 +64,7 @@ class BooksApp extends React.Component {
 
   render() {
     return (
+      <BrowserRouter>
       <div className='app'>
         <Route
           exact
@@ -74,8 +77,9 @@ class BooksApp extends React.Component {
         <Route
           exact
           path='/search'
-          render={(() => (<Search selectBooks={this.state.books} onChangeShelf={this.onChangeShelf}/>))} />
+          render={(() => (<Search selectBooks={this.state.books} onChangeShelf={this.onChangeShelf}/>))}/>
       </div>
+      </BrowserRouter>
     )
   }
 }
