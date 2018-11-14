@@ -66,7 +66,7 @@ class BooksApp extends React.Component {
         <Route
           exact
           path='/'
-          rebder={(() => (<BookCase
+          render={(() => (<BookCase
             books={this.state.books}
             onChangeShelf={this.changeShelf}
             onRefreshAllBooks={this.refeshAllBooks} />))} />
