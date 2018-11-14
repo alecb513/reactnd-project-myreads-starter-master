@@ -1,5 +1,4 @@
 
-/*
 
 export const sortAllBooks = (list) => {
 
@@ -26,10 +25,11 @@ export const sortAllBooks = (list) => {
     return newList;
 }
 
-*/
+/*
 
 export const sortAllBooks = (list) => {
 const newList = list.sort();
 
 return newList;
 }
+*/

@@ -1,11 +1,13 @@
 import React from 'react'
-
+import { Route } from 'react-router-dom';
 
 import * as BooksAPI from './BooksAPI'
 import * as BookUtils from './BookUtils';
 
 import './App.css'
 import BookCase from './Components/BookCase';
+import Search from './Components/Search';
+
 
 class BooksApp extends React.Component {
   state = {
@@ -34,7 +36,7 @@ class BooksApp extends React.Component {
         });
       });
   }
-  
+
 
   changeShelf = (book, shelf) => {
 
@@ -45,7 +47,7 @@ class BooksApp extends React.Component {
           .state
           .books
           .slice(0);
-         
+
 
         const books = newList.filter(listBook => listBook.id === book.id);
         if (books.length) {
@@ -59,11 +61,22 @@ class BooksApp extends React.Component {
   }
 
   render() {
+    return (
+      <div className='app'>
+        <Route
+          exact
+          path='/'
+          rebder={(() => (<BookCase
+            books={this.state.books}
+            onChangeShelf={this.changeShelf}
+            onRefreshAllBooks={this.refeshAllBooks} />))} />
 
-    return (<BookCase books={this.state.books}
-    onRefreshAllBooks={this.refeshAllBooks}
-    onChangeShelf ={this.changeShelf}/>)
-
+        <Route
+          exact
+          path='/search'
+          render={(() => (<Search selectBooks={this.state.books} onChangeShelf={this.onChangeShelf}/>))} />
+      </div>
+    )
   }
 }
 
