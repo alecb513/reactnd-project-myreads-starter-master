@@ -77,7 +77,7 @@ class BooksApp extends React.Component {
         <Route
           exact
           path='/search'
-          render={(() => (<Search selectBooks={this.state.books} onChangeShelf={this.onChangeShelf}/>))}/>
+          render={(() => (<Search selectedBooks={this.state.books} onChangeShelf={this.onChangeShelf}/>))}/>
       </div>
       </BrowserRouter>
     )
