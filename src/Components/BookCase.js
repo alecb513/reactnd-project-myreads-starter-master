@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import {Link} from 'react-router-dom';
 import BookShelf from "./BookShelf";
 
 class BookCase extends Component {
@@ -46,8 +46,9 @@ class BookCase extends Component {
                            />))}
                         </div>
                     </div>
-                    <div className="open-search">{console.log('seach opened')}
-                        <a onClick={() => this.setState({ showSearchPage: true })}>Add a book{console.log('click')}</a>
+                    <div className="open-search">
+                        {/* <a onClick={() => this.setState({ showSearchPage: true })}>Add a book{console.log('click')}</a> */}
+                        <Link className="close-search" to='/search'>Close</Link>
                     </div>
                 </div>
             </div>
