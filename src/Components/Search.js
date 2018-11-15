@@ -80,7 +80,7 @@ class Search extends Component {
                                 <Book
                                     book={book}
                                     onChangeShelf={this.props.onChange}
-                                    onUpdateQuickView={this.updateQuickView}
+                                    //onUpdateQuickView={this.updateQuickView}
                                 />
                             </li>
                         ))}
