@@ -18,10 +18,11 @@ export const sortAllBooks = (list) => {
 
 export const mergeShelfAndSearch = (shelf, search) => {
     const hashTable = {};
-    shelf.forEach(book => hashTable[book.id] = book.shelf);
-
+    //shelf.forEach(book => hashTable[book.id] = book.shelf);
+   
     search.forEach(book => {
         book.shelf = hashTable[book.id] || 'none';
+        console.log(hashTable);
     });
     return search;
 }

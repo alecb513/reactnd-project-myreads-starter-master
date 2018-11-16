@@ -71,7 +71,7 @@ class BooksApp extends React.Component {
           path='/'
           render={(() => (<BookCase
             books={this.state.books}
-            onChangeShelf={this.changeShelf}
+            onChangeShelf={this.changeShelf}//formaly this.changeShelf
             onRefreshAllBooks={this.refeshAllBooks} />))} />
 
         <Route
@@ -84,4 +84,4 @@ class BooksApp extends React.Component {
   }
 }
 
-export default BooksApp
+export default BooksApp;

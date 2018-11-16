@@ -21,7 +21,7 @@ class Changer extends Component {
             <div className="book-shelf-changer">
                 <select
                     value={this.state.shelfSelection}
-                    onChange={(e) => this.onChangeShelf(this.props.book, e.target.value)}>
+                    onChange={(e) => this.onChangeShelf(this.props.book, e.target.value)}>{console.log('change')}
                     <option value="" disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="wantToRead">Want to Read</option>
