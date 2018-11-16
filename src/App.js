@@ -37,8 +37,8 @@ class BooksApp extends React.Component {
           newBook: false
         });
       });
+      
   }
-
 
   changeShelf = (book, shelf) => {
 
@@ -59,6 +59,7 @@ class BooksApp extends React.Component {
           newList = BookUtils.sortAllBooks(newList);
         }
         this.setState({ books: newList });
+        console.log(this.state.books);
       })
   }
 

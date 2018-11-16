@@ -38,7 +38,9 @@ class Search extends Component {
                 newError = true;
             } else if (response.length) {
                 newList = BookUtils.mergeShelfAndSearch(this.props.selectedBooks, response);
+               
                 newList = BookUtils.sortAllBooks(newList);
+               
             }
             this.setState({ error: newError, books: newList });
         })
