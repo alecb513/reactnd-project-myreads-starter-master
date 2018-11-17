@@ -33,14 +33,15 @@ class Search extends Component {
 
             let newList = [];
             let newError = false;
+            
 
             if (response === undefined || (response.error && response.error !== "empty query")) {
                 newError = true;
             } else if (response.length) {
-                newList = BookUtils.mergeShelfAndSearch(this.props.selectedBooks, response);
-               
+                newList = BookUtils.mergeShelfAndSearch(Array.isArray(this.props.selectedBooks) ? this.props.selectedBooks: [], response);
+    
                 newList = BookUtils.sortAllBooks(newList);
-               
+    
             }
             this.setState({ error: newError, books: newList });
         })

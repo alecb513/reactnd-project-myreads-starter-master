@@ -37,7 +37,6 @@ class BooksApp extends React.Component {
           newBook: false
         });
       });
-      
   }
 
   changeShelf = (book, shelf) => {
